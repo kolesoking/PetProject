@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class KeysList: UITableViewController {
     
     let betaArray = ["a", "b", "c"]
 

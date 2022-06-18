@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		C4C1AEDA285CAB42007D7192 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1AED9285CAB42007D7192 /* AppDelegate.swift */; };
-		C4C1AEDE285CAB42007D7192 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1AEDD285CAB42007D7192 /* ViewController.swift */; };
+		C4C1AEDE285CAB42007D7192 /* KeysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1AEDD285CAB42007D7192 /* KeysList.swift */; };
 		C4C1AEE4285CAB42007D7192 /* PetProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4C1AEE2285CAB42007D7192 /* PetProject.xcdatamodeld */; };
 		C4C1AEE6285CAB45007D7192 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4C1AEE5285CAB45007D7192 /* Assets.xcassets */; };
 		C4C1AEE9285CAB45007D7192 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C1AEE7285CAB45007D7192 /* LaunchScreen.storyboard */; };
 		C4C1AEF1285CB85F007D7192 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1AEF0285CB85F007D7192 /* TableViewCell.swift */; };
+		C4C1AEFD285CD471007D7192 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1AEFC285CD471007D7192 /* LoginViewController.swift */; };
+		C4C4CCC6285DB8E200FC3EC5 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4CCC5285DB8E200FC3EC5 /* AlertController.swift */; };
+		C4C4CCC9285DCFF600FC3EC5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4CCC8285DCFF600FC3EC5 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C4C1AED6285CAB42007D7192 /* PetProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C1AED9285CAB42007D7192 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C4C1AEDD285CAB42007D7192 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C4C1AEDD285CAB42007D7192 /* KeysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysList.swift; sourceTree = "<group>"; };
 		C4C1AEE3285CAB42007D7192 /* PetProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetProject.xcdatamodel; sourceTree = "<group>"; };
 		C4C1AEE5285CAB45007D7192 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4C1AEE8285CAB45007D7192 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4C1AEEA285CAB45007D7192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4C1AEF0285CB85F007D7192 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		C4C1AEFC285CD471007D7192 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C4C4CCC5285DB8E200FC3EC5 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		C4C4CCC8285DCFF600FC3EC5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		C4C1AED8285CAB42007D7192 /* PetProject */ = {
 			isa = PBXGroup;
 			children = (
+				C4C4CCC7285DCFE900FC3EC5 /* Model */,
 				C4C1AEF8285CC634007D7192 /* ViewConrollers */,
 				C4C1AEFB285CC673007D7192 /* View */,
 				C4C1AEF6285CC5EA007D7192 /* App */,
@@ -86,7 +93,8 @@
 		C4C1AEF8285CC634007D7192 /* ViewConrollers */ = {
 			isa = PBXGroup;
 			children = (
-				C4C1AEDD285CAB42007D7192 /* ViewController.swift */,
+				C4C1AEFC285CD471007D7192 /* LoginViewController.swift */,
+				C4C1AEDD285CAB42007D7192 /* KeysList.swift */,
 			);
 			path = ViewConrollers;
 			sourceTree = "<group>";
@@ -111,8 +119,17 @@
 			isa = PBXGroup;
 			children = (
 				C4C1AEF0285CB85F007D7192 /* TableViewCell.swift */,
+				C4C4CCC5285DB8E200FC3EC5 /* AlertController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C4C4CCC7285DCFE900FC3EC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C4C4CCC8285DCFF600FC3EC5 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,9 +202,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4C1AEDE285CAB42007D7192 /* ViewController.swift in Sources */,
+				C4C1AEDE285CAB42007D7192 /* KeysList.swift in Sources */,
 				C4C1AEF1285CB85F007D7192 /* TableViewCell.swift in Sources */,
+				C4C4CCC9285DCFF600FC3EC5 /* User.swift in Sources */,
 				C4C1AEDA285CAB42007D7192 /* AppDelegate.swift in Sources */,
+				C4C1AEFD285CD471007D7192 /* LoginViewController.swift in Sources */,
+				C4C4CCC6285DB8E200FC3EC5 /* AlertController.swift in Sources */,
 				C4C1AEE4285CAB42007D7192 /* PetProject.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,7 +349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HXD5CYVJM9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PetProject/Info.plist;
+				INFOPLIST_FILE = PetProject/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -356,7 +376,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HXD5CYVJM9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PetProject/Info.plist;
+				INFOPLIST_FILE = PetProject/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
