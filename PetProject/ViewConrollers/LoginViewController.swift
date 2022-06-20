@@ -61,7 +61,7 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .white
         
         setupSubviews(loginTextField, passwordTextField, signInButton, signUpButton)
-        setConstreints()
+        addConstreints()
     }
     
     private func setupSubviews(_ subviews: UIView...) {
@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    private func setConstreints() {
+    private func addConstreints() {
         
         loginTextField.translatesAutoresizingMaskIntoConstraints = false
         setConstreints(for: loginTextField, to: nil, top: 250, leading: 40, trailing: -40)
@@ -87,13 +87,12 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func signIn() {
-//        showAlert(title: "Hello", message: "World")
         for user in users {
             if loginTextField.text == user.login && passwordTextField.text == user.password {
-                showAlert(title: "Hello", message: "Good")
-            } //else {
-                //showAlert(title: "Mb lol", message: "mda")
-            //}
+                let keysListVS = KeysList()
+                keysListVS.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+                present(keysListVS, animated: true)
+            }
         }
     }
     
