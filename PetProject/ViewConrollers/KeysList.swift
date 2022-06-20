@@ -15,6 +15,9 @@ class KeysList: UITableViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        // переделать
+        navigationController?.navigationBar.isHidden = false
+        
         self.tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
         
         setupNavigationBar()

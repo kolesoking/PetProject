@@ -55,13 +55,21 @@ class LoginViewController: UIViewController {
     }()
     
     
-
+    // переделать
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        navigationController?.navigationBar.isHidden = true
+        
         setupSubviews(loginTextField, passwordTextField, signInButton, signUpButton)
         addConstreints()
+        setupNavigationBar()
+    }
+    
+    // переделать
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
     }
     
     private func setupSubviews(_ subviews: UIView...) {
@@ -90,8 +98,9 @@ class LoginViewController: UIViewController {
         for user in users {
             if loginTextField.text == user.login && passwordTextField.text == user.password {
                 let keysListVS = KeysList()
-                keysListVS.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-                present(keysListVS, animated: true)
+//                keysListVS.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+//                present(keysListVS, animated: true)
+                navigationController?.pushViewController(keysListVS, animated: true)
             }
         }
     }
@@ -154,5 +163,28 @@ extension LoginViewController {
         }
         alert.addAction(okAction)
         present(alert, animated: true)
+    }
+    
+    // переделать
+    private func setupNavigationBar() {
+        title = "NONE"
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let navBarAppearance = UINavigationBarAppearance()
+        
+        navBarAppearance.backgroundColor = UIColor(
+            red: 10/255,
+            green: 15/255,
+            blue: 20/255,
+            alpha: 195/255
+        )
+        
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        
     }
 }
