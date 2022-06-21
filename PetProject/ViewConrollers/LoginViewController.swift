@@ -128,22 +128,22 @@ extension LoginViewController {
         return textField
     }
     
-    private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(
-            title: title,
-            message: message,
-            preferredStyle: .alert
-        )
-        let okAction = UIAlertAction(title: "ok", style: .default)
-        alert.addTextField { textField in
-            textField.placeholder = "Login"
-        }
-        alert.addTextField { textField in
-            textField.placeholder = "Password"
-        }
-        alert.addAction(okAction)
-        present(alert, animated: true)
-    }
+//    private func showAlert(title: String, message: String) {
+//        let alert = UIAlertController(
+//            title: title,
+//            message: message,
+//            preferredStyle: .alert
+//        )
+//        let okAction = UIAlertAction(title: "ok", style: .default)
+//        alert.addTextField { textField in
+//            textField.placeholder = "Login"
+//        }
+//        alert.addTextField { textField in
+//            textField.placeholder = "Password"
+//        }
+//        alert.addAction(okAction)
+//        present(alert, animated: true)
+//    }
 }
 
 extension LoginViewController: UITextFieldDelegate {

@@ -29,6 +29,12 @@ extension UIViewController {
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.9999999404, blue: 0.9999999404, alpha: 1)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addNewKey)
+        )
     }
     
     func setConstreints(for view: UIView, to lastView: UIView?, top: CGFloat, leading: CGFloat, trailing: CGFloat) {
@@ -46,5 +52,28 @@ extension UIViewController {
                 view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: trailing)
             ])
         }
+    }
+    
+    // переделать
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(title: "ok", style: .default)
+        alert.addTextField { textField in
+            textField.placeholder = "Login"
+        }
+        alert.addTextField { textField in
+            textField.placeholder = "Password"
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
+    // переделать
+    @objc private func addNewKey() {
+        showAlert(title: "ok", message: "asd")
     }
 }
