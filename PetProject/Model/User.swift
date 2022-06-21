@@ -28,7 +28,8 @@ struct Keys {
     
     static func addKeys() -> [Keys] {
         [
-            Keys(app: "VK", login: "koleso", password: "1111")
+            Keys(app: "VK", login: "koleso", password: "1111"),
+            Keys(app: "OK", login: "koleso", password: "1111")
         ]
     }
 }

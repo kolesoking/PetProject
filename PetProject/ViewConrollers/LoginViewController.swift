@@ -64,7 +64,6 @@ class LoginViewController: UIViewController {
         
         setupSubviews(loginTextField, passwordTextField, signInButton, signUpButton)
         addConstreints()
-        setupNavigationBar()
     }
     
     // переделать
@@ -83,7 +82,6 @@ class LoginViewController: UIViewController {
         loginTextField.translatesAutoresizingMaskIntoConstraints = false
         setConstreints(for: loginTextField, to: nil, top: 250, leading: 40, trailing: -40)
         
-        
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         setConstreints(for: passwordTextField, to: loginTextField, top: 40, leading: 40, trailing: -40)
         
@@ -98,8 +96,7 @@ class LoginViewController: UIViewController {
         for user in users {
             if loginTextField.text == user.login && passwordTextField.text == user.password {
                 let keysListVS = KeysList()
-//                keysListVS.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-//                present(keysListVS, animated: true)
+                keysListVS.betaArray = user.keys
                 navigationController?.pushViewController(keysListVS, animated: true)
             }
         }
@@ -123,23 +120,22 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController {
-    private func setConstreints(for view: UIView, to lastView: UIView?, top: CGFloat, leading: CGFloat, trailing: CGFloat) {
-        
-        if let lastView = lastView {
-            NSLayoutConstraint.activate([
-                view.topAnchor.constraint(equalTo: lastView.bottomAnchor, constant: top),
-                view.leadingAnchor.constraint(equalTo: super.view.leadingAnchor, constant: leading),
-                view.trailingAnchor.constraint(equalTo: super.view.trailingAnchor, constant: trailing)
-            ])
-        } else {
-            NSLayoutConstraint.activate([
-                view.topAnchor.constraint(equalTo: super.view.topAnchor, constant: top),
-                view.leadingAnchor.constraint(equalTo: super.view.leadingAnchor, constant: leading),
-                view.trailingAnchor.constraint(equalTo: super.view.trailingAnchor, constant: trailing)
-            ])
-        }
-        
-    }
+//    private func setConstreints(for view: UIView, to lastView: UIView?, top: CGFloat, leading: CGFloat, trailing: CGFloat) {
+//        
+//        if let lastView = lastView {
+//            NSLayoutConstraint.activate([
+//                view.topAnchor.constraint(equalTo: lastView.bottomAnchor, constant: top),
+//                view.leadingAnchor.constraint(equalTo: super.view.leadingAnchor, constant: leading),
+//                view.trailingAnchor.constraint(equalTo: super.view.trailingAnchor, constant: trailing)
+//            ])
+//        } else {
+//            NSLayoutConstraint.activate([
+//                view.topAnchor.constraint(equalTo: super.view.topAnchor, constant: top),
+//                view.leadingAnchor.constraint(equalTo: super.view.leadingAnchor, constant: leading),
+//                view.trailingAnchor.constraint(equalTo: super.view.trailingAnchor, constant: trailing)
+//            ])
+//        }
+//    }
     
     private func settingTextField(placeHolder: String, borderStyle: UITextField.BorderStyle) -> UITextField {
         let textField = UITextField()
@@ -163,28 +159,5 @@ extension LoginViewController {
         }
         alert.addAction(okAction)
         present(alert, animated: true)
-    }
-    
-    // переделать
-    private func setupNavigationBar() {
-        title = "NONE"
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let navBarAppearance = UINavigationBarAppearance()
-        
-        navBarAppearance.backgroundColor = UIColor(
-            red: 10/255,
-            green: 15/255,
-            blue: 20/255,
-            alpha: 195/255
-        )
-        
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        navigationController?.navigationBar.standardAppearance = navBarAppearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-        
     }
 }
