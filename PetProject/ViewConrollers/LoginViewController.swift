@@ -9,7 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    private let users = User.addUsers()
+    private let users: [User]? = nil
     
     private lazy var loginTextField = settingTextField(
         placeHolder: "Login",
@@ -60,6 +60,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
+        
         navigationController?.navigationBar.isHidden = true
         
         setupSubviews(loginTextField, passwordTextField, signInButton, signUpButton)
@@ -69,6 +72,9 @@ class LoginViewController: UIViewController {
     // переделать
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
+        addConstreints()
+        signInButton.isHidden = false
+        signUpButton.setTitle("Sign Up", for: .normal)
     }
     
     private func setupSubviews(_ subviews: UIView...) {
@@ -93,49 +99,27 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func signIn() {
-        for user in users {
-            if loginTextField.text == user.login && passwordTextField.text == user.password {
-                let keysListVS = KeysList()
-                keysListVS.betaArray = user.keys
-                navigationController?.pushViewController(keysListVS, animated: true)
-            }
-        }
+        let keysListVS = KeysList()
+        keysListVS.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        navigationController?.pushViewController(keysListVS, animated: true)
+//        present(keysListVS, animated: true)
     }
     
     @objc private func signUp() {
-        print("OK")
+        if signUpButton.titleLabel?.text == "Sign Up" {
+            signInButton.isHidden = true
+            signUpButton.setTitle("GO", for: .normal)
+//            setConstreints(for: signUpButton, to: passwordTextField, top: 20, leading: 40, trailing: -40)
+        } else {
+            signIn()
+//            addConstreints()
+//            signInButton.isHidden = false
+//            signUpButton.setTitle("Sign Up", for: .normal)
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension LoginViewController {
-//    private func setConstreints(for view: UIView, to lastView: UIView?, top: CGFloat, leading: CGFloat, trailing: CGFloat) {
-//        
-//        if let lastView = lastView {
-//            NSLayoutConstraint.activate([
-//                view.topAnchor.constraint(equalTo: lastView.bottomAnchor, constant: top),
-//                view.leadingAnchor.constraint(equalTo: super.view.leadingAnchor, constant: leading),
-//                view.trailingAnchor.constraint(equalTo: super.view.trailingAnchor, constant: trailing)
-//            ])
-//        } else {
-//            NSLayoutConstraint.activate([
-//                view.topAnchor.constraint(equalTo: super.view.topAnchor, constant: top),
-//                view.leadingAnchor.constraint(equalTo: super.view.leadingAnchor, constant: leading),
-//                view.trailingAnchor.constraint(equalTo: super.view.trailingAnchor, constant: trailing)
-//            ])
-//        }
-//    }
     
     private func settingTextField(placeHolder: String, borderStyle: UITextField.BorderStyle) -> UITextField {
         let textField = UITextField()
@@ -159,5 +143,18 @@ extension LoginViewController {
         }
         alert.addAction(okAction)
         present(alert, animated: true)
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == loginTextField {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            signIn()
+        }
+        
+        return true
     }
 }

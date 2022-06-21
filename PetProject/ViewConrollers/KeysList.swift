@@ -9,7 +9,7 @@ import UIKit
 
 class KeysList: UITableViewController {
     
-    var betaArray: [Keys]!
+    var betaArray: [Keys] = [Keys(app: "asd", login: "asd", password: "asd")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,32 +36,5 @@ class KeysList: UITableViewController {
 
         return cell
     }
-    
-    
-    
-    
-//    private func setupNavigationBar() {
-//        title = "NONE"
-//        
-//        navigationController?.navigationBar.prefersLargeTitles = true
-//        
-//        let navBarAppearance = UINavigationBarAppearance()
-//        
-//        navBarAppearance.backgroundColor = UIColor(
-//            red: 10/255,
-//            green: 15/255,
-//            blue: 20/255,
-//            alpha: 195/255
-//        )
-//        
-//        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-//        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-//        
-//        navigationController?.navigationBar.standardAppearance = navBarAppearance
-//        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-//        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.9999999404, blue: 0.9999999404, alpha: 1)
-//    }
-
-
 }
 
