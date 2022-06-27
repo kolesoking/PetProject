@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
     }()
     
     
-    // переделать
+    // MARK: - Переделать
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -69,12 +69,13 @@ class LoginViewController: UIViewController {
         addConstreints()
     }
     
-    // переделать
+    // MARK: - Переделать
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
         addConstreints()
-        signInButton.isHidden = false
-        signUpButton.setTitle("Sign Up", for: .normal)
+        signInButton.setTitle("Sign in", for: .normal)
+        signUpButton.isHidden = false
+        
     }
     
     private func setupSubviews(_ subviews: UIView...) {
@@ -89,7 +90,7 @@ class LoginViewController: UIViewController {
         setConstreints(for: loginTextField, to: nil, top: 250, leading: 40, trailing: -40)
         
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        setConstreints(for: passwordTextField, to: loginTextField, top: 40, leading: 40, trailing: -40)
+        setConstreints(for: passwordTextField, to: loginTextField, top: 30, leading: 40, trailing: -40)
         
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         setConstreints(for: signInButton, to: passwordTextField, top: 40, leading: 40, trailing: -40)
@@ -102,19 +103,17 @@ class LoginViewController: UIViewController {
         let keysListVS = KeysList()
         keysListVS.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         navigationController?.pushViewController(keysListVS, animated: true)
-//        present(keysListVS, animated: true)
     }
+    
+    // MARK: - переделать
     
     @objc private func signUp() {
         if signUpButton.titleLabel?.text == "Sign Up" {
-            signInButton.isHidden = true
-            signUpButton.setTitle("GO", for: .normal)
-//            setConstreints(for: signUpButton, to: passwordTextField, top: 20, leading: 40, trailing: -40)
+            signUpButton.isHidden = true
+            signInButton.setTitle("Sign Up", for: .normal)
+            showCoolAlert()
         } else {
             signIn()
-//            addConstreints()
-//            signInButton.isHidden = false
-//            signUpButton.setTitle("Sign Up", for: .normal)
         }
     }
 }
@@ -127,23 +126,6 @@ extension LoginViewController {
         textField.borderStyle = borderStyle
         return textField
     }
-    
-//    private func showAlert(title: String, message: String) {
-//        let alert = UIAlertController(
-//            title: title,
-//            message: message,
-//            preferredStyle: .alert
-//        )
-//        let okAction = UIAlertAction(title: "ok", style: .default)
-//        alert.addTextField { textField in
-//            textField.placeholder = "Login"
-//        }
-//        alert.addTextField { textField in
-//            textField.placeholder = "Password"
-//        }
-//        alert.addAction(okAction)
-//        present(alert, animated: true)
-//    }
 }
 
 extension LoginViewController: UITextFieldDelegate {

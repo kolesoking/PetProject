@@ -54,7 +54,7 @@ extension UIViewController {
         }
     }
     
-    // переделать
+    // MARK: - Переделать
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(
             title: title,
@@ -68,6 +68,23 @@ extension UIViewController {
         alert.addTextField { textField in
             textField.placeholder = "Password"
         }
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
+    // MARK: - Переделать
+    
+    func showCoolAlert() {
+        let alert = UIAlertController(
+            title: "Cool!",
+            message: "Registration completed successfully",
+            preferredStyle: .alert
+        )
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.showAlert(title: "as", message: "asd")
+        }
+        
         alert.addAction(okAction)
         present(alert, animated: true)
     }

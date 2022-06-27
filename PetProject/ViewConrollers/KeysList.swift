@@ -36,9 +36,5 @@ class KeysList: UITableViewController {
 
         return cell
     }
-    
-    @objc private func addNewKey() {
-        showAlert(title: "ok", message: "asd")
-    }
 }
 
