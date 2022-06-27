@@ -17,6 +17,7 @@
 		C4C4CCC6285DB8E200FC3EC5 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4CCC5285DB8E200FC3EC5 /* AlertController.swift */; };
 		C4C4CCC9285DCFF600FC3EC5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4CCC8285DCFF600FC3EC5 /* User.swift */; };
 		C4C4CCCC28622EDB00FC3EC5 /* Extesion + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4CCCB28622EDB00FC3EC5 /* Extesion + UIViewController.swift */; };
+		C4C4CCD0286984F900FC3EC5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4CCCF286984F900FC3EC5 /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C4C4CCC5285DB8E200FC3EC5 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		C4C4CCC8285DCFF600FC3EC5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C4C4CCCB28622EDB00FC3EC5 /* Extesion + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extesion + UIViewController.swift"; sourceTree = "<group>"; };
+		C4C4CCCF286984F900FC3EC5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		C4C1AED8285CAB42007D7192 /* PetProject */ = {
 			isa = PBXGroup;
 			children = (
+				C4C4CCCD286984C000FC3EC5 /* Services */,
 				C4C4CCC7285DCFE900FC3EC5 /* Model */,
 				C4C1AEF8285CC634007D7192 /* ViewConrollers */,
 				C4C1AEFB285CC673007D7192 /* View */,
@@ -133,6 +136,14 @@
 				C4C4CCC8285DCFF600FC3EC5 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C4C4CCCD286984C000FC3EC5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C4C4CCCF286984F900FC3EC5 /* StorageManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +219,7 @@
 				C4C1AEDE285CAB42007D7192 /* KeysList.swift in Sources */,
 				C4C4CCCC28622EDB00FC3EC5 /* Extesion + UIViewController.swift in Sources */,
 				C4C1AEF1285CB85F007D7192 /* TableViewCell.swift in Sources */,
+				C4C4CCD0286984F900FC3EC5 /* StorageManager.swift in Sources */,
 				C4C4CCC9285DCFF600FC3EC5 /* User.swift in Sources */,
 				C4C1AEDA285CAB42007D7192 /* AppDelegate.swift in Sources */,
 				C4C1AEFD285CD471007D7192 /* LoginViewController.swift in Sources */,
