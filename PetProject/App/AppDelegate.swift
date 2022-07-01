@@ -18,13 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
-//        window?.rootViewController = LoginViewController()
         
         return true
     }
-
-    // MARK: - Core Data stack
-
-
+    func applicationWillTerminate(_ application: UIApplication) {
+        StorageManager.shared.SaveCotext()
+    }
 }
 

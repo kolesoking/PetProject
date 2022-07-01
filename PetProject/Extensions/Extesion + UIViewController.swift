@@ -54,7 +54,7 @@ extension UIViewController {
         }
     }
     
-    // MARK: - Переделать
+    // FIXME
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(
             title: title,
@@ -72,8 +72,7 @@ extension UIViewController {
         present(alert, animated: true)
     }
     
-    // MARK: - Переделать
-    
+    // FIXME
     func showCoolAlert() {
         let alert = UIAlertController(
             title: "Cool!",
@@ -89,7 +88,7 @@ extension UIViewController {
         present(alert, animated: true)
     }
     
-    // переделать
+    // FIXME
     @objc private func addNewKey() {
         showAlert(title: "ok", message: "asd")
     }

@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
     }()
     
     
-    // MARK: - Переделать
+    // FIXME
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
         addConstreints()
     }
     
-    // MARK: - Переделать
+    // FIXME
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
         addConstreints()
@@ -105,8 +105,7 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(keysListVS, animated: true)
     }
     
-    // MARK: - переделать
-    
+    // FIXME
     @objc private func signUp() {
         if signUpButton.titleLabel?.text == "Sign Up" {
             signUpButton.isHidden = true
